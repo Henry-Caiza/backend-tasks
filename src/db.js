@@ -1,7 +1,8 @@
 import mongoose from "mongoose"
-
-import { MONGO_URL } from './config.js'
-
+import env from "dotenv"
+env.config()
+//import { MONGO_URL } from './config.js'
+const MONGO_URL = process.env.DB_CONNECTION_URL
 export const connecDB = async () => {
     try {
         await mongoose.connect(MONGO_URL)
