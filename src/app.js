@@ -8,8 +8,8 @@ import cors from 'cors'
 const app = express()
 
 app.use(cors({
-    origin: 'https://back-tasks.vercel.app',
-    //origin: 'https://taskscv.netlify.app',
+    //origin: 'https://back-tasks.vercel.app',
+    origin: 'https://taskscv.netlify.app',
     //origin: 'http://localhost:5173',
     credentials: true
 }))
