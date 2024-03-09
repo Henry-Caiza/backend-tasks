@@ -22,7 +22,9 @@ export const register = async (req, res) => {
         })
         const userSaved = await newUser.save()
         const token = await CreateAccessToken({ id: userSaved._id })
-        res.cookie('token', token)
+        res.cookie('token', token, {
+            maxAge: 1000 * 60 * 60 * 24
+        })
 
         res.json({
             id: userSaved._id,
@@ -48,7 +50,9 @@ export const login = async (req, res) => {
         if (!isMatch) return res.status(400).json({ message: "Incorrect credentials" })
 
         const token = await CreateAccessToken({ id: userFound._id })
-        res.cookie('token', token)
+        res.cookie('token', token, {
+            maxAge: 1000 * 60 * 60 * 24
+        })
 
         res.json({
             id: userFound._id,
