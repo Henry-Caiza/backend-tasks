@@ -11,6 +11,7 @@ export function CreateAccessToken(payload) {
             TOKEN_SECRET,
             { expiresIn: "1d" },
             (err, token) => {
+                console.log('fgdfgfdgfdg:', token);
                 if (err) reject(err)
                 resolve(token)
             })
