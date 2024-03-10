@@ -11,7 +11,7 @@ app.use(cors({
     origin: 'https://taskscv.netlify.app',
     // 'https://taskscv.netlify.app',
     // 'http://localhost:5173',
-    credentials: true
+    credentials: true,
 }))
 app.use(morgan('dev'))
 app.use(express.json())
